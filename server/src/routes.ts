@@ -10,6 +10,12 @@ const itemsController = new ItemsController();
 routes.get("/items", itemsController.index);
 
 // cadastro de ponto de coleta
-routes.post("/", pointsController.create);
+routes.post("/points", pointsController.create);
+
+// listar ponto de coleta específico
+routes.get("/points/:id", pointsController.show);
+
+// filtrar por items
+routes.get("/points", pointsController.index);
 
 export default routes;
